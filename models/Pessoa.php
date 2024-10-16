@@ -23,5 +23,13 @@ class Pessoa extends ConexaoBanco {
         $sql->bindParam(':observacao', $data['observacao']);
         $sql->execute();
         return $sql->rowCount();
-    } 
+    }
+    
+    function delete($id) {
+        $sql = $this->conBD->prepare("DELETE FROM pessoa WHERE id = :id");
+        $sql->bindParam(':id', $id);
+        $sql->execute();
+        return $sql->rowCount();
+        }
+
 }
