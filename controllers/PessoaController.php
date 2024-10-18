@@ -17,6 +17,10 @@ class PessoaController{
     function novaPessoa() {
         require('./views/pessoaForm.php');
     }
+    function editar($id){
+        $result = $this->model->selectById($id);
+        require('./views/pessoaForm.php');
+    }
 
     function insert($data) {
         $result = $this->model->insert($data);
@@ -25,6 +29,11 @@ class PessoaController{
 
     function delete($id) {
         $result = $this->model->delete($id);
+        header('Location: ./pessoa.php');
+    }
+
+    function update($data) {
+        $result = $this->model->update($data);
         header('Location: ./pessoa.php');
     }
 }
