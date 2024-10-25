@@ -29,11 +29,19 @@ class PessoaController{
 
     function delete($id) {
         $result = $this->model->delete($id);
+        if ($result > 0) {
+            $_SESSION['message'] = 'Pessoa excluída com sucesso!';
+            $_SESSION['messageType'] = 'success!';
+        }
         header('Location: ./pessoa.php');
     }
 
     function update($data) {
         $result = $this->model->update($data);
+        if ($result > 0) {
+            $_SESSION['message'] = 'Pessoa alterada com sucesso!';
+            $_SESSION['messageType'] = 'success!';
+        }
         header('Location: ./pessoa.php');
     }
 }

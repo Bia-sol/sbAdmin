@@ -1,4 +1,7 @@
-<?php
+<?php 
+//verificar se o usuario esta logado
+require_once './utils/auth.php';
+checkLogin();
 
 require_once './controllers/PessoaController.php';
 
