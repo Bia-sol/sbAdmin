@@ -25,6 +25,8 @@ require_once './utils/util.php';
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
+<!-- Toastr -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
 
 <body id="page-top">
 

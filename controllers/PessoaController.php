@@ -24,6 +24,10 @@ class PessoaController{
 
     function insert($data) {
         $result = $this->model->insert($data);
+        if ($result > 0) {
+            $_SESSION['message'] = 'Pessoa inserida com sucesso!';
+            $_SESSION['messageType'] = 'success';
+        }
         header('Location: ./pessoa.php');
     }
 
@@ -31,7 +35,7 @@ class PessoaController{
         $result = $this->model->delete($id);
         if ($result > 0) {
             $_SESSION['message'] = 'Pessoa excluída com sucesso!';
-            $_SESSION['messageType'] = 'success!';
+            $_SESSION['messageType'] = 'success';
         }
         header('Location: ./pessoa.php');
     }
@@ -40,7 +44,7 @@ class PessoaController{
         $result = $this->model->update($data);
         if ($result > 0) {
             $_SESSION['message'] = 'Pessoa alterada com sucesso!';
-            $_SESSION['messageType'] = 'success!';
+            $_SESSION['messageType'] = 'success';
         }
         header('Location: ./pessoa.php');
     }
